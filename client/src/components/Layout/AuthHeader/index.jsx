@@ -14,11 +14,14 @@ const AuthHeader = () => {
       <div className={styles.loginContainer}>
         <div className={styles.headerAuthPage}>
           <Logo src={`${CONSTANTS.STATIC_IMAGES_PATH}logo.png`} alt="logo" />
-          <div className={styles.linkAuthContainer}>
-            <Link to={isLoginPage ?"/registration" : "/login"} style={{ textDecoration: 'none' }}>
+          <Link
+            to={isLoginPage ? '/registration' : '/login'}
+            style={{ textDecoration: 'none' }}
+          >
+            <div className={styles.linkAuthContainer}>
               <span>{isLoginPage ? 'Signup' : 'Login'}</span>
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
