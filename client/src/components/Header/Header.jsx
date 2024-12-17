@@ -7,6 +7,7 @@ import { clearUserStore } from '../../store/slices/userSlice';
 import { getUser } from '../../store/slices/userSlice';
 import withRouter from '../../hocs/withRouter';
 import HeaderMenu from '../HeaderMenu';
+import Logo from '../Logo';
 
 class Header extends React.Component {
   componentDidMount() {
@@ -95,10 +96,8 @@ class Header extends React.Component {
     );
   };
 
-  
-
   render() {
-    const {headerItems} = this.props
+    const { headerItems } = this.props;
 
     if (this.props.isFetching) {
       return null;
@@ -122,13 +121,10 @@ class Header extends React.Component {
           </div>
         </div>
         <div className={styles.navContainer}>
-          <Link to="/">
-            <img
-              src={`${CONSTANTS.STATIC_IMAGES_PATH}blue-logo.png`}
-              className={styles.logo}
-              alt="blue_logo"
-            />
-          </Link>
+          <Logo
+            src={`${CONSTANTS.STATIC_IMAGES_PATH}blue-logo.png`}
+            alt="blue_logo"
+          />
 
           <div className={styles.leftNav}>
             <div className={styles.nav}>
