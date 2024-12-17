@@ -6,6 +6,7 @@ import CONSTANTS from '../../constants';
 import { clearUserStore } from '../../store/slices/userSlice';
 import { getUser } from '../../store/slices/userSlice';
 import withRouter from '../../hocs/withRouter';
+import HeaderMenu from '../HeaderMenu';
 
 class Header extends React.Component {
   componentDidMount() {
@@ -94,25 +95,11 @@ class Header extends React.Component {
     );
   };
 
-  headerItemsRender = (item) => (
-    <li key={item.title}>
-      <span>{item.title}</span>
-      <img src={`${CONSTANTS.STATIC_IMAGES_PATH}menu-down.png`} alt="menu" />
-      <ul>
-        {item.items.map((i) => (
-          <li key={i}>
-            <a href="https://google.com">{i}</a>
-          </li>
-        ))}
-      </ul>
-    </li>
-  );
-
-  headerRender = () => {
-    return this.props.headerItems.map((item) => this.headerItemsRender(item));
-  };
+  
 
   render() {
+    const {headerItems} = this.props
+
     if (this.props.isFetching) {
       return null;
     }
@@ -145,7 +132,7 @@ class Header extends React.Component {
 
           <div className={styles.leftNav}>
             <div className={styles.nav}>
-              <ul>{this.headerRender()}</ul>
+              <HeaderMenu headerItems={headerItems} />
             </div>
             {this.props.data && this.props.data.role !== CONSTANTS.CREATOR && (
               <div
