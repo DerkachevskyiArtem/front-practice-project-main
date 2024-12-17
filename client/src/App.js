@@ -23,6 +23,8 @@ import PrivateRoute from './components/Routes/PrivateRoute/PrivateRoute';
 
 class App extends Component {
   render() {
+    const { HeaderItems: headerItems } = CONSTANTS;
+
     return (
       <Router history={browserHistory}>
         <ToastContainer
@@ -37,7 +39,7 @@ class App extends Component {
           pauseOnHover
         />
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout headerItems={headerItems} />}>
             <Route index element={<Home />} />
 
             <Route element={<OnlyNotAuthorizedUserRoute />}>
@@ -76,8 +78,8 @@ class App extends Component {
                 }
               />
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/contest/:id" element={<ContestPage />}/>
-              <Route path="/account" element={<UserProfile />}/>
+              <Route path="/contest/:id" element={<ContestPage />} />
+              <Route path="/account" element={<UserProfile />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Route>

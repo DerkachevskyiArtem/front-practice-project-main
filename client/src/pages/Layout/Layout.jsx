@@ -9,13 +9,15 @@ import styles from './Layout.module.sass';
 const Layout = (props) => {
   const { pathname } = useLocation();
 
+  const { headerItems } = props;
+
   const isRegisterPathname = pathname === '/registration';
   const isAuthPathname = pathname === '/login' || isRegisterPathname;
 
   return (
     <div className={styles.container}>
       {isAuthPathname && <AuthHeader />}
-      {!isAuthPathname && <Header />}
+      {!isAuthPathname && <Header headerItems={headerItems} />}
       <div className={styles.content}>
         <Outlet />
       </div>

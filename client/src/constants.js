@@ -81,4 +81,50 @@ export default {
       items: ['Terms of Service', 'Privacy Policy', 'Cookie Policy'],
     },
   ],
+  HeaderItems: [
+    {
+      title: 'NAME IDEAS',
+      items: [
+        'Beauty',
+        'Consulting',
+        'E-Commerce',
+        'Fashion & Clothing',
+        'Finance',
+        'Real Estate',
+        'Tech',
+        'More Categories',
+      ],
+    },
+    {
+      title: 'CONTESTS',
+      items: [
+        'HOW IT WORKS',
+        'PRICING',
+        'AGENCY SERVICE',
+        'ACTIVE CONTESTS',
+        'WINNERS',
+        'LEADERBOARD',
+        'BECOME A CREATIVE',
+      ],
+    },
+    {
+      title: 'Our Work',
+      items: ['NAMES', 'TAGLINES', 'LOGOS', 'TESTIMONIALS'],
+    },
+    {
+      title: 'Names For Sale',
+      items: [
+        'POPULAR NAMES',
+        'SHORT NAMES',
+        'INTRIGUING NAMES',
+        'NAMES BY CATEGORY',
+        'VISUAL NAME SEARCH',
+        'SELL YOUR DOMAINS',
+      ],
+    },
+    {
+      title: 'Blog',
+      items: ['ULTIMATE NAMING GUIDE', 'POETIC DEVICES IN BUSINESS NAMING', 'CROWDED BAR THEORY', 'ALL ARTICLES']
+    }
+  ],
 };
